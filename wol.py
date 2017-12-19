@@ -1,9 +1,9 @@
-#!/usr/bin/env python
 # wol.py
 # https://www.vivaolinux.com.br/artigo/Wake-on-LAN-WOL-utilizando-Netcat-Dissecando-o-protocolo
 
 import socket
 import struct
+import sys
 
 
 def wake_on_lan(macaddress):
@@ -26,7 +26,8 @@ def wake_on_lan(macaddress):
     # Split up the hex values and pack.
     for i in range(0, len(data), 2):
         send_data = b''.join(
-                [send_data, struct.pack('B', int(data[i: i + 2], 16))])
+            [send_data, struct.pack('B', int(data[i: i + 2], 16))]
+        )
 
     # Broadcast it to the LAN.
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -40,4 +41,4 @@ if __name__ == '__main__':
     # wake_on_lan('0F-0F-DF-0F-BF-EF')
     # or without any seperators.
     # wake_on_lan('0F0FDF0FBFEF')
-    wake_on_lan('B8-97-5A-E5-C2-A7')
+    wake_on_lan(sys.argv[1])
