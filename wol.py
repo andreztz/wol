@@ -9,6 +9,7 @@ import socket
 import struct
 import re
 
+
 def wake_on_lan(macaddress):
     ''' Use macaddresses with any seperators.
     '0F:0F:DF:0F:BF:EF', '0F-0F-DF-0F-BF-EF',
