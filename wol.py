@@ -44,7 +44,7 @@ if __name__ == '__main__':
     import argparse
 
     parser = argparse.ArgumentParser(
-        description=__doc__, 
+        description=__doc__,
         usage='wol --mac "0F:0F:DF:0F:BF:EF"')
     parser.add_argument('-m', '--mac', help=wake_on_lan.__doc__)
     args = parser.parse_args()
