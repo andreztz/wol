@@ -15,6 +15,9 @@ def wake_on_lan(macaddress):
     '0F:0F:DF:0F:BF:EF', '0F-0F-DF-0F-BF-EF',
     or without any seperators '0F0FDF0FBFEF' '''
 
+    if not macaddress:
+        raise ValueError('Not arguments yet!\nUse wol --help')
+
     # Check macaddress format and try to compensate.
     if len(macaddress) == 12:
         pass
@@ -45,9 +48,10 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(
         description=__doc__,
-        usage='wol --mac "0F:0F:DF:0F:BF:EF"')
+        usage='wol --mac 0F:0F:DF:0F:BF:EF')
     parser.add_argument('-m', '--mac', help=wake_on_lan.__doc__)
     args = parser.parse_args()
+
     try:
         wake_on_lan(args.mac)
     except Exception as error:
