@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Switches on remote computers using WOL.
+Switch on remote computers using WOL.
 
 '''
 # https://www.vivaolinux.com.br/artigo/Wake-on-LAN-WOL-utilizando-Netcat-Dissecando-o-protocolo
