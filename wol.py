@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 '''
-Switch on remote computers using WOL.
+Switch on remote computers.
 
 '''
 # https://www.vivaolinux.com.br/artigo/Wake-on-LAN-WOL-utilizando-Netcat-Dissecando-o-protocolo
@@ -48,8 +48,8 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(
         description=__doc__,
-        usage='wol --mac 0F:0F:DF:0F:BF:EF')
-    parser.add_argument('-m', '--mac', help=wake_on_lan.__doc__)
+        usage='wol 0F:0F:DF:0F:BF:EF')
+    parser.add_argument('mac', help=wake_on_lan.__doc__)
     args = parser.parse_args()
 
     try:
