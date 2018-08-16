@@ -4,6 +4,11 @@ Switch on remote computers.
 
 '''
 # https://www.vivaolinux.com.br/artigo/Wake-on-LAN-WOL-utilizando-Netcat-Dissecando-o-protocolo
+# ^[a-fA-F0-9:]{17}|[a-fA-F0-9-]{17}|[a-fA-F0-9]{12}$
+# 00:02:02:34:72:a5
+# 00-02-02-34-72-a5
+# 0002023472a5
+
 
 import socket
 import struct
